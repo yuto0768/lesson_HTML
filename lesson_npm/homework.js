@@ -16,10 +16,16 @@ app.get("/page2", (req, res)=>{
 });
 
 //ファイルを配信する
-app.use("/files", express.static("files"));//filesの階層に来た時にfilesフォルダの中身を送る
+app.use("/picfile/image", express.static("./picfile/image"));
+
+app.use("/stylesheet", express.static("./stylesheet"));
 
 //テンプレートエンジンにEJSを使用します
 app.set("view engine", "ejs");
+
+app.get("/lesson_npm", (req, res)=>{
+    res.render("./html/lesson2.ejs");//使用する変数を第２引数としてかく
+  });
 
 //HTTPサーバーを作成します
 var server = http.createServer(app);
