@@ -1,0 +1,10 @@
+text{color:red; font-size:2em; font-weight:bold}
+p.esson_picture.png{
+    width: 320; 
+    height: 320;
+}
+p.content1 {
+    border: solid 1px;
+    margin-top: 2em;
+    padding: 2em;
+    }
