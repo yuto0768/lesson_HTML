@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>FORMの練習</title>
+  </head>
+
+  <body>
+    <h1>ユーザーが入力した情報を送る</h1>
+    <h2>POSTで送る</h2>
+    <form action="/form_lesson/save" method="POST" enctype="application/x-www-form-urlencoded">
+      <dl>
+
+        <dt><label for="user_name">ユーザー名（テキストボックス）</label></dt>
+        <dd><input name="user_name" type="text"></dd>
+
+        <dt>種別（ラジオボックス）</dt>
+        <dd>
+          <label><input name="user_type" type="radio" value="1">会員</label>
+          <label><input name="user_type" type="radio" value="2">一般</label>
+          <label><input name="user_type" type="radio" value="3">ゲスト</label>
+        </dd>
+
+        <dt>種別（プルダウン）</dt>
+        <dd>
+          <select name="user_type2"">
+            <option value="member">会員</option>            
+            <option value="normal">一般</option>            
+            <option value="guest">ゲスト</option>            
+          </select>
+        </dd>
+
+        <dt>複数選択（チェックボックス）</dt>
+        <dd>
+          <label><input name="check"" type="checkbox" value="apple">りんご</label>
+          <label><input name="check" type="checkbox" value="tomato">とまと</label>
+          <label><input name="check" type="checkbox" value="orange">みかん</label>
+        </dd>
+
+        <input name="kakushi" type="hidden" value="隠し項目">
+
+        <input type="submit" value="送信">
+      </dl>
+
+    </form>
+
+    <h2>GETで送る</h2>
+    <form action="/form_lesson/search">
+      <label for="keyword">検索</label>
+      <input name="keyword" type="text">
+      <input type="submit" value="検索">
+    </form>
+  </body>
+
+</html>

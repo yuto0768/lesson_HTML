@@ -27,6 +27,11 @@ app.get("/lesson_npm", (req, res)=>{
     res.render("./html/lesson2.ejs");//使用する変数を第２引数としてかく
   });
 
+//フォーム入力を可能にします
+const bodyParser = require("body-parser"); //bodyParser使用しないとPOST取れない
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/form_lesson", require("./form_lesson/form_lesson"));
+
 //HTTPサーバーを作成します
 var server = http.createServer(app);
 
