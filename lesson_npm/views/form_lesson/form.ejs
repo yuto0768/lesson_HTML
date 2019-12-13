@@ -50,6 +50,33 @@
       <input name="keyword" type="text">
       <input type="submit" value="検索">
     </form>
+
+    <h2>値を保存する</h2>
+    <form action="/form_lesson/save_file" method="POST" enctype="application/x-www-form-urlencoded">
+      <dl>
+        <dt><label for="name">注文者</label></dt>
+        <dd><input name="name" type="text"></dd>
+
+        <dt><label for="product">商品</label></dt>
+        <select name="product"">
+          <option value="そば">蕎麦</option>            
+          <option value="らーめん">らーめん</option>            
+          <option value="うどん">うどん</option>            
+        </select>
+
+        <dt><label for="amcount">数量</label></dt>
+        <dd><input name="amount" type="number"></dd>
+
+        <input type="submit" value="送信">
+      </dl>
+    </form>
+    <h3>登録済み</h3>
+    <ol>
+      <% orders.forEach(p=>{ %>
+        <li><%= p %></li>
+      <% }) %>
+    </ol>
+
   </body>
 
 </html>

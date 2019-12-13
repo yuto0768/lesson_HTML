@@ -1,8 +1,15 @@
 //ルーターを使用します
 const router = require("express").Router(); //変わらない変数
+const OrderManager = require("./OrderManager");
+const Order = require("./Order");
+
+//初期状態の注文リストを読み込む
+OrderManager.load();
 
 router.get("/", (req, res)=>{
-  res.render("form_lesson/form.ejs");
+  res.render("form_lesson/form.ejs",{
+    orders:OrderManager.orders
+  });
 });
 
 router.post("/save", (req, res)=>{  
@@ -40,6 +47,18 @@ router.get("/photo/:name", (req, res)=>{
     keyword
   });
 });
+
+router.post("/save_file", (req, res)=>{  
+  let name    = req.body.name;
+  let product = req.body.product;
+  let amount  = parseInt(req.body.amount);
+
+
+  let order = new Order(name, product, amount);
+  OrderManager.add(order);
+  res.redirect("/form_lesson/");
+});
+
 
 //ファイルアップロードに使用します
 // const multer = require("multer");
