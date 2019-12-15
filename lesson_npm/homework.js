@@ -30,7 +30,7 @@ app.get("/lesson_npm", (req, res)=>{
 //フォーム入力を可能にします
 const bodyParser = require("body-parser"); //bodyParser使用しないとPOST取れない
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/form_lesson", require("./form_lesson/form_lesson"));
+app.use("/form_lesson", require("./form_lesson/form_lesson"));//form_lesosonにアクセスしたら、form_lessonのなかにあるform_lessonを実行する。
 
 //HTTPサーバーを作成します
 var server = http.createServer(app);

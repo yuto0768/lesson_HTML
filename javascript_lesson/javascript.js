@@ -12,7 +12,7 @@ var n = 1;
 var f = 1.0;
 console.log(`n = ${n}`);
 console.log(`f = ${f}`);
-console.log(`f.fixed() = ${f.toFixed(2)}`);
+console.log(`f.fixed() = ${f.toFixed(2)}`);//変数名.fixedで小数点表示
 console.log(`f+n = ${f+n}`);
 console.log("")
 
@@ -24,15 +24,15 @@ console.log(`str_n = ${str_n}`);
 console.log(`str_n+100 = ${str_n+100}`);//文字は+でくっつけられる
 
 //文字列から数値に変換する
-var str_to_n = parseInt(str_n);
+var str_to_n = parseInt(str_n);//parseIntで数字にする
 console.log(`str_to_n+100 = ${str_to_n+100}`);
 //数値から文字に変換する
-var n_to_str = String(100);
+var n_to_str = String(100);//Stringで文字にする
 console.log(`n_to_Str+100 = ${n_to_str+100}`);
 
 
 //文字列の一部を抜き出す
-var str_sub = "moji".substring(1, 3);
+var str_sub = "moji".substring(1, 3);//substring(1文字目、３文字目の１つ前の文字)
 console.log(`str_sub = ${str_sub}`);
 console.log();
 

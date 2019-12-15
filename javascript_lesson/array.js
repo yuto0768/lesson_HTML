@@ -16,7 +16,7 @@ console.log(`array_slice = ${array_slice}`);
 var names = ["山田", "田中", "鈴木", "佐藤"];
 
 //条件にあった要素を抜き出す
-var array_filter = names.filter(e => e.includes("田"));
+var array_filter = names.filter(e => e.includes("田"));//=>
 console.log(array_filter);
 
 var array_filter2 = names.filter((e) => {
