@@ -11,5 +11,8 @@ var number_map = number.map( function ( value ){
 })
 console.log(number_map);
 
+var number_map = number.map(x => x * 10);
+console.log(number_map);
+
 var number_slice = number.slice( 1, 3 );
 console.log(number_slice);
