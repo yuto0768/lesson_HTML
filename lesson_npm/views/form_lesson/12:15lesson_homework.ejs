@@ -2,28 +2,24 @@
 <html>
 
   <head>
-    <title>Get_lesson</title>
+    <title>ユーザー情報表示</title>
   </head>
 
   <body>
+    <h1>会員管理システム</h1>
     <h2>名前入力</h2>
-    <form action="/form_homework/form_lesson2">
-      <label for="keyword">送信</label>
-      <input name="keyword" type="text">
-      <input type="submit" value="送信">
-    </form>
-    <h2>POSTで送る</h2>
-    <form action="/form_homework/lesson_post" method="POST" enctype="application/x-www-form-urlencoded">
+
+    <form action="/user_info/edit" method="POST" enctype="application/x-www-form-urlencoded">
       <dl>
 
-        <dt><label for="user_name">ユーザー名（テキストボックス）</label></dt>
-        <dd><input name="user_name" type="text" value="abc"></dd>
+        <dt><label for="user_name">名前</label></dt>
+        <dd><input name="user_name" type="text"></dd>
 
-        <dt>種別（ラジオボタン）</dt>
+        <dt>性別</dt>
         <dd>
-          <label><input name="user_type" type="radio" value="1">会員</label>
-          <label><input name="user_type" type="radio" value="2">一般</label>
-          <label><input name="user_type" type="radio" value="3">ゲスト</label>
+          <label><input name="user_type" type="radio" value="男性">男性</label>
+          <label><input name="user_type" type="radio" value="女性">女性</label>
+          <label><input name="user_type" type="radio" value="その他">その他</label>
         </dd>
 
         <dt>種別（プルダウン）</dt>
@@ -35,16 +31,17 @@
           </select>
         </dd>
 
-        <dt>複数選択（チェックボックス）</dt>
+        <dt>スキル</dt>
         <dd>
-          <label><input name="check"" type="checkbox" value="apple">りんご</label>
-          <label><input name="check" type="checkbox" value="tomato">とまと</label>
-          <label><input name="check" type="checkbox" value="orange">みかん</label>
+          <label><input name="check"" type="checkbox" value="javascript">Javascript</label>
+          <label><input name="check" type="checkbox" value="ruby">Ruby</label>
+          <label><input name="check" type="checkbox" value="php">PHP</label>
         </dd>
 
         <input name="kakushi" type="hidden" value="隠し項目">
 
-        <input type="submit" value="送信">
+        <input type="submit" value="キャンセル">
+        <input type="submit" value="保存">
       </dl>
 
     </form>

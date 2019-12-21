@@ -11,7 +11,7 @@ router.get("/form_lesson2", (req, res)=>{
     word:keyword
     });
  })
- router.post("/lesson_post", (req, res)=>{
+ router.post("/edit", (req, res)=>{
      let user_type2 = req.body.user_type2
      let check = req.body.check
      res.render("form_lesson/12:15lesson_homework_post.ejs",{
