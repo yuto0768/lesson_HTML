@@ -9,33 +9,33 @@
     <h1>会員管理システム</h1>
     <h2>名前入力</h2>
 
-    <form action="/user_info/edit" method="POST" enctype="application/x-www-form-urlencoded">
+    <form action="/user_info/save" method="POST" enctype="application/x-www-form-urlencoded">
       <dl>
 
         <dt><label for="user_name">名前</label></dt>
-        <dd><input name="user_name" type="text"></dd>
+        <dd><input name="user_name" type="text" value="<%= user_name %>"></dd>
 
         <dt>性別</dt>
         <dd>
-          <label><input name="user_type" type="radio" value="男性">男性</label>
-          <label><input name="user_type" type="radio" value="女性">女性</label>
-          <label><input name="user_type" type="radio" value="その他">その他</label>
+          <label><input name="user_type" type="radio" value="男性" <%= user_type=="男性" ? "checked" : "" %> >男性</label>
+          <label><input name="user_type" type="radio" value="女性" <%= user_type=="女性" ? "checked" : "" %>>女性</label>
+          <label><input name="user_type" type="radio" value="その他"<%= user_type=="その他" ? "checked" : "" %>>その他</label>
         </dd>
 
         <dt>種別（プルダウン）</dt>
         <dd>
           <select name="user_type2"">
-            <option value="member">会員</option>            
-            <option value="normal">一般</option>            
-            <option value="guest">ゲスト</option>            
+            <option value="member" <%= user_type2=="member" ? "selected" : "" %>>会員</option>            
+            <option value="normal" <%= user_type2=="normal" ? "selected" : "" %>>一般</option>            
+            <option value="guest" <%= user_type2=="guest" ? "selected" : "" %>>ゲスト</option>            
           </select>
         </dd>
 
         <dt>スキル</dt>
         <dd>
-          <label><input name="check"" type="checkbox" value="javascript">Javascript</label>
-          <label><input name="check" type="checkbox" value="ruby">Ruby</label>
-          <label><input name="check" type="checkbox" value="php">PHP</label>
+          <label><input name="check"" type="checkbox" value="javascript" <%= check.includes("javascript") ? "checked" :""%> >Javascript</label>
+          <label><input name="check" type="checkbox" value="ruby" <%= check.includes("ruby") ? "checked" :""%>>Ruby</label>
+          <label><input name="check" type="checkbox" value="php" <%= check.includes("php") ? "checked" :""%>>PHP</label>
         </dd>
 
         <input name="kakushi" type="hidden" value="隠し項目">

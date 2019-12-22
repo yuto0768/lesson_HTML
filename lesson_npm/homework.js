@@ -31,7 +31,7 @@ app.get("/lesson_npm", (req, res)=>{
 const bodyParser = require("body-parser"); //bodyParser使用しないとPOST取れない
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/form_lesson", require("./form_lesson/form_lesson"));//form_lesosonにアクセスしたら、form_lessonのなかにあるform_lessonを実行する。
-app.use("/form_homework", require("./12:15homework/from"))
+app.use("/user_info", require("./12:15homework/from"))
 
 //HTTPサーバーを作成します
 var server = http.createServer(app);
