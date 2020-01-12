@@ -2,10 +2,10 @@
 const { Client } = require("pg");
 
 const config = {
-  user: 'postgres',
-  host: 'samurai-test1.ckmiwi9xqwvp.us-east-2.rds.amazonaws.com',
-  database: 'testdb1',
-  password: 'samurai-test1',
+  user: 'sakai0768',
+  host: 'samurai-test.cl5rilsmm17j.ap-northeast-1.rds.amazonaws.com',
+  database: 'postgres',
+  password: 'Siamshade0768',
   port: 5432,
 };
 
@@ -19,11 +19,12 @@ class OrderManager {
     let client = new Client(config);
     client.connect()
       .then(() => {
-        return client.query(`create table if not exists orders
+        return client.query(`create table if not exists users
         (id serial NOT NULL,
-        name varchar(64),
-        product varchar(64),
-        amount int)`);
+        name      varchar(64),
+        user_type varchar(64),
+        uset_type2 varchar(64),
+        check      int)`);
       })
       .catch((err) => {
         console.log(err);
@@ -32,12 +33,12 @@ class OrderManager {
       });
   }
 
-  add(order) {
+  add(user) {
     let client = new Client(config);
     return client.connect()
       .then(() => {
-        return client.query("insert into orders(name, product, amount) values($1, $2, $3)",
-          [order.name, order.product, order.amount]);
+        return client.query("insert into users(name, user_type, user_type2, check) values($1, $2, $3, $4)",
+          [user.name, user.]);
       }).finally(() => {
         client.end();
       });
