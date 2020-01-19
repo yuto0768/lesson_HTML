@@ -33,6 +33,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/form_lesson", require("./form_lesson/form_lesson"));//form_lesosonにアクセスしたら、form_lessonのなかにあるform_lessonを実行する。
 app.use("/user_info", require("./12:15homework/from"))
 
+
+//ログイン機能を有効にします
+//const session = require('express-session');
+//app.use(session({
+//  secret: 'secret string',
+//  saveUninitialized: false,
+//  resave: false,
+//}));
+//const login = require("./session_lesson/login");
+//app.use("/member", login,  require("./session_lesson/member"));
+
+
 //HTTPサーバーを作成します
 var server = http.createServer(app);
 
