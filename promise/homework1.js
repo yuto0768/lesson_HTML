@@ -5,31 +5,29 @@ const fs = require("fs");
 //callback(err, data)
 //errは、エラー時に設定されます。
 //エラーが発生しなかった場合は、errはnullで、dataに内容が設置されます。
-function loadFile(file, callback) {
-  fs.readFile(file, {encoding:"UTF8"}, (err, data)=>{
-    if(err){
-      callback(err);
-      return;
-    }
-    callback(null, data);
+function loadFile(file) {
+  return new Promise((resolve, reject)=>{
+    fs.readFile(file, {encoding:"UTF8"}, (err, data)=>{
+      if(err){
+        reject(err);
+        //return;
+      }else{
+        resolve(data);
+        //return;
+      } 
+    });
   });
-}
-
+} 
 //ファイルを読み込んで、内容を返します
-loadFile("./hello.txt", (err, data)=>{
-  if(err){
-    console.log(err);
-    return;
-  }
+loadFile("./hello.txt")
+  .then((data)=>{
   console.log(data);
+}).catch((error)=>{
+  console.log(error);
 });
-
-loadFile("./nashi.txt", (err, data)=>{
-  if(err){
-    console.log(err);
-    return;
-  }
+loadFile("./nachi.txt")
+  .then((data)=>{
   console.log(data);
+}).catch((error)=>{
+  console.log(error);
 });
-
-  
