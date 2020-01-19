@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>会員ログイン</title>
+  </head>
+
+  <body>
+    <h1>ログイン</h1>
+    <% if(error){ %>
+      <div>
+      <%= error %>
+      </div>
+    <% } %>
+
+    <form action="/member/login" method="POST" enctype="application/x-www-form-urlencoded">
+    <dl>
+      <dt>Eメール</dt>
+      <dd><input type="email" name="email"></dd>
+      <dt>パスワード</dt>
+      <dd><input type="password" name="password"></dd>
+    </dl>
+    <input type="submit" value="ログイン">
+  </form>
+  <a href="/member/signup">新規登録</a>
+
+  </body>
+
+</html>

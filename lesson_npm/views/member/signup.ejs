@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>会員登録</title>
+  </head>
+
+  <body>
+    <h1>会員登録</h1>
+    <% if(error){ %>
+      <div>
+      <%= error %>
+      </div>
+    <% } %>
+
+    <form action="/member/signup" method="POST" enctype="application/x-www-form-urlencoded">
+    <dl>
+      <dt>Eメール</dt>
+      <dd><input type="email" name="email"></dd>
+      <dt>なまえ</dt>
+      <dd><input type="text" name="name"></dd>
+      <dt>パスワード</dt>
+      <dd><input type="password" name="password"></dd>
+      <dt>パスワード(確認)</dt>
+      <dd><input type="password" name="password_confirm"></dd>
+    </dl>
+    <input type="submit" value="登録">
+  </form>
+
+  </body>
+
+</html>
