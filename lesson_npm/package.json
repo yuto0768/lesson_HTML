@@ -6,7 +6,7 @@
   "dependencies": {
     "ejs": "^3.0.1",
     "els": "^0.1.0-alpha",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "pg": "^7.15.1"
   },
   "devDependencies": {},
